@@ -34,3 +34,27 @@
 
 ## Demonstration
 <video src='https://user-images.githubusercontent.com/63528145/227158577-d92c6e8d-df21-4461-a69b-9e7cde8c8dcf.mov' width=180/>
+
+# git mv a folder and sub folders in windows 
+
+function Move-GitFolder {
+    param (
+        $target,
+        $destination
+    )
+    
+    Get-ChildItem $target -recurse |
+    Where-Object { ! $_.PSIsContainer } |
+    ForEach-Object { 
+        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $target))
+        $fullDestinationFolder = [System.IO.Path]::GetFullPath((Join-Path (__pycache__) $lib))
+        $fileDestination = $_.Directory.FullName.Replace($fullTargetFolder.TrimEnd('\'), $fullDestinationFolder.TrimEnd('\'))
+
+        New-Item -ItemType Directory -Force -Path $fileDestination | Out-Null
+
+        $filePath = Join-Path $fileDestination $_.Name
+
+        git mv $_.FullName $filePath
+        
+    }
+}

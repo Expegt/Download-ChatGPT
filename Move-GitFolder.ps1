@@ -9,7 +9,7 @@ function Move-GitFolder {
     Get-ChildItem $target -recurse |
     Where-Object { ! $_.PSIsContainer } |
     ForEach-Object { 
-        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $target))
+        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (__pycache__) $lib))
         $fullDestinationFolder = [System.IO.Path]::GetFullPath((Join-Path (__pycache__) $lib))
         $fileDestination = $_.Directory.FullName.Replace($fullTargetFolder.TrimEnd('\'), $fullDestinationFolder.TrimEnd('\'))
 

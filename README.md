@@ -1,5 +1,5 @@
 
-### This extension allows you to use Blender with natural language commands using OpenAI's GPT-4
+## This extension allows you to use Blender with natural language commands using OpenAI's GPT-4
   
 <image src='https://user-images.githubusercontent.com/63528145/227160213-6862cd5e-b31f-43ea-a5e5-6cc340a95617.png'/>
 
@@ -12,7 +12,7 @@
 - ```Generate Blender Python``` code from natural language commands
 - Integrated with Blender's UI for easy usage
 - Supports Blender version 3.0.0 and above
-- 
+
 ### Installation
 - Clone this repository by clicking ```Code > Download ZIP``` on GitHub
 - Open Blender, go to ```Edit > Preferences > Add-ons > Install```

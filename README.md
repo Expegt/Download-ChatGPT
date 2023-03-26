@@ -1,12 +1,11 @@
 
-## This extension allows you to use Blender with natural language commands using OpenAI's GPT-4
-  
 <image src='https://user-images.githubusercontent.com/63528145/227160213-6862cd5e-b31f-43ea-a5e5-6cc340a95617.png'/>
 
-## Coffiee For You!
+## This extension allows you to use Blender with natural language commands using OpenAI's GPT-4
+
 <image src='https://media.tenor.com/bKWZU5g0ePAAAAAM/good-morning-coffee.gif'/>
 
-# This extension allows you to use Blender with natural language commands using OpenAI's GPT-4
+## Coffiee For You!
 
 ### Features
 - ```Generate Blender Python``` code from natural language commands

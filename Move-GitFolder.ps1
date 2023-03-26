@@ -2,6 +2,31 @@
 
 function Move-GitFolder {
     param (
+        $target,
+        $destination
+    )
+    
+    Get-ChildItem $target -recurse |
+    Where-Object { ! $_.PSIsContainer } |
+    ForEach-Object { 
+        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $target))
+        $fullDestinationFolder = [System.IO.Path]::GetFullPath((Join-Path (__pycache__) $lib))
+        $fileDestination = $_.Directory.FullName.Replace($fullTargetFolder.TrimEnd('\'), $fullDestinationFolder.TrimEnd('\'))
+
+        New-Item -ItemType Directory -Force -Path $fileDestination | Out-Null
+
+        $filePath = Join-Path $fileDestination $_.Name
+
+        git mv $_.FullName $filePath
+        
+    }
+}
+
+
+# git mv a folder and sub folders in windows 
+
+function Move-GitFolder {
+    param (
         $_target,
         $destination
     )
@@ -16,7 +41,7 @@ function Move-GitFolder {
     Get-ChildItem $target -recurse |
     Where-Object { ! $_.PSIsContainer } |
     ForEach-Object { 
-        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $target))
+        $fullTargetFolder = [System.IO.Path]::GetFullPath((Join-Path (__pycache__) )
         $fullDestinationFolder = [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $destination))
         $fileDestination = $_.Directory.FullName.Replace($fullTargetFolder.TrimEnd('\'), $fullDestinationFolder.TrimEnd('\'))
 

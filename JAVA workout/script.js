@@ -14,6 +14,9 @@ function oddOrEven(x) {
 }
   
   oddOrEven (1)
+  oddOrEven (25)
   oddOrEven (2)
-  oddOrEven (2)
-  oddOrEven (2)
+  oddOrEven (27)
+oddOrEven (24)
+oddOrEven (22)
+oddOrEven (28)

@@ -23,7 +23,7 @@
 - To view the code generations in realtime, go to ```Window > Toggle System Console```
 
 ### Usage
-- In the 3D View, open the sidebar (press N if not visible) and locate the ```GPT-4 Assistant``` tab
+- In the ```3D View```, open the sidebar (press N if not visible) and locate the ```GPT-4 Assistant``` tab
 - Type a natural language command in the input field, e.g., ```"create a cube at the origin"```
 - Click the Execute button to generate and execute the ```Blender Python code```
 
